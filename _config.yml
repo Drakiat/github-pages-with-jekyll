@@ -25,5 +25,5 @@ feed_show_tags: true
 # Add a search button to the navbar
 post_search: true
 rss-description: Security research, tech and other interests.
-avatar: "/images/favicon.png"
+avatar: "{{site.url}}/images/favicon.png"
 round-avatar: true
