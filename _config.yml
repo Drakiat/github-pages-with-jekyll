@@ -8,7 +8,7 @@ theme: minima
 # social links
 #twitter_username:  # DO NOT include the @ character, or else the build will fail!
 github_username:  Drakiat # DO NOT include the @ character, or else the build will fail!
-url: https://drakiat.github.io/
+url: https://drakiat.github.io
 baseurl: /github-pages-with-jekyll
 permalink: pretty
 rss: RSS
