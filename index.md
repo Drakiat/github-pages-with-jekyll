@@ -1,4 +1,4 @@
 ---
-title: "Welcome to my blog"
+title: "Drakiat's blog"
 ---
-I'm glad you are here. I plan to talk about stuff that interests me!!
+Cybersecurity blog and tech posts.
