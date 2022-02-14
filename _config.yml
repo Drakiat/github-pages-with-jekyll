@@ -16,7 +16,7 @@ show_tags: true
 # Add a search button to the navbar
 post_search: true
 rss-description: Security research, tech and other interests.
-avatar: "{{site.url}}/images/favicon.png"
+avatar: "{{site.url}}/images/image.ico"
 round-avatar: true
 plugins:
   - jekyll-feed
