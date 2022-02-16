@@ -74,7 +74,7 @@ Reflected Cross-Site Scripting is a vulnerability in web apps where an user inpu
 That compromised page can then be used for social engineering attacks such as cookie stealing or malware download.
 In summary, if you input something in a field, and you get back your input on the returned page, it might be vulnerable to XSS.</p>
 <h1>Flexi guest submit app</h1>
-The Flexi Guest submit is a plugin that allows the creation of a portal to submit media files, which can then be reflected in a nicely arranged portfolio.
+Flexi Guest submit is a plugin that allows the creation of a portal to submit media files, which can then be reflected in a nicely arranged portfolio.
 <br>
 The app contains a user-dashboard accessible at http://localhost:8000/user-dashboard/
 This dashboard contains a search field that allows searching posted media files.
