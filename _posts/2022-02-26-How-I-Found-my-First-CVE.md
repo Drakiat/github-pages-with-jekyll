@@ -1,7 +1,7 @@
 ---
 title: "How I found my first CVE with Cross-Site Scripting(XSS)"
 author: "Felipe Tapia Sasot"
-date: 2022-02-13
+date: 2022-02-26
 categories: Cybersecurity
 tags: CVE-2022-0449
 ---
@@ -81,7 +81,9 @@ This dashboard contains a search field that allows searching posted media files.
 Using a common payload, such as ```<img src=1 onerror=alert(1)>``` we get an alert box!
 <img src="{{site.url}}/images/xssalert.jpg" style="display: block; margin: auto;" />
 The final XSS url ends up being:<br>
-http://localhost:8000/user-dashboard/?search=keyword:<img%20src=1%20onerror=alert(1)>  <br>
+http://localhost:8000/user-dashboard/?search=keyword:<img%20src=1%20onerror=alert(1)>  
+<br>
+<br>
 There are many XSS payloads to manually test from in this repository:
 https://github.com/payloadbox/xss-payload-list
 <br>

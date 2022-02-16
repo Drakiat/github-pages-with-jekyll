@@ -5,8 +5,9 @@ description: > # this means to ignore newlines until "baseurl:"
   Security research, tech and other interests.
 theme: minima
 # social links
-#twitter_username:  # DO NOT include the @ character, or else the build will fail!
+twitter_username: wyldgoat  # DO NOT include the @ character, or else the build will fail!
 github_username:  Drakiat # DO NOT include the @ character, or else the build will fail!
+linkedin_username: felipetpsa
 excerpt_length: 25
 permalink: pretty
 rss: RSS
