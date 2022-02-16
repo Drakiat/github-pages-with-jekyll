@@ -3,15 +3,15 @@ title: "How I found my first CVE with Cross-Site Scripting(XSS)"
 author: "Felipe Tapia Sasot"
 date: 2022-02-13
 categories: Cybersecurity
+tags: CVE-2022-0449
 ---
 
-As 2022 started, I set as a goal for myself to start exploring web security, and bug bounties programs. I always thought that getting a CVE was something only experienced security researchers, hardened with tons of experience, would be able to find these rare eleven character labels. However, as it turns out there are tons of low hanging fruit that are vulnerable to common bugs, and can still impact the security or companies and individuals around the globe.
-<br>
+As 2022 started, I set as a goal for myself to start exploring web security and bug bounties programs. I always thought that getting a CVE was something only experienced security researchers, hardened with tons of experience, would be able to find these rare eleven-character labels. However, as it turns out there are tons of low hanging fruit that are vulnerable to common bugs and can still impact the security or companies and individuals around the globe.
+<br />
 <h1>The vulnerable world of WordPress plugins</h1>
 WordPress is a useful service that is used around the world to host blogs and e-commerce sites among other things. WordPress instances can be expanded upon with plugins that allow for new implemented functionalities.
 <h1>Finding a low hanging fruit</h1>
-If this is your first time looking for bugs in a program, the first place you have to go to is the WordPress plugin store. Here you will find a lot of projects, some monetized some free, that may be vulnerable. It is unlikely that you will find any 0-day that will turn the internet upside down, but you can find bugs that will give you the confidence of pursuing your bug bounty journey.
-I suggest you spin up a docker instance of WordPress on your own computer in order to quickly be able to experiment on your own homelab.
+If this is your first time looking for bugs in a program, the first place you must go to is the WordPress plugin store. Here you will find a lot of projects, some monetized some free, that may be vulnerable. It is unlikely that you will find any 0-day that will turn the internet upside down, but you can find bugs that will give you the confidence of pursuing your bug bounty journey. I suggest you spin up a docker instance of WordPress on your own computer to quickly be able to experiment on your own home lab.
 <h1>Setting up WordPress Docker on your own machine</h1>
 First, install docker with your package manager, here I am using Debian 11:
 ```
@@ -74,10 +74,12 @@ The app contains a user-dashboard accessible at loclhost:8000/user-dashboard/
 This dashboard contains a search field that allows to browse the users who posted media files.
 Using a common payload, such as ```<img src=1 onerror=alert(1)>``` we get an alert box!
 <img src="{{site.url}}/images/xssalert.jpg" style="display: block; margin: auto;" />
-the final XSS url ends up being localhost:8000/user-dashboard/?search=keyword:<img%20src=1%20onerror=alert(1)>
+<br />
+The final XSS url ends up being:
+http://localhost:8000/user-dashboard/?search=keyword:<img%20src=1%20onerror=alert(1)>
 There are many XSS payloads to manually test from in this repository:
 https://github.com/payloadbox/xss-payload-list
-<br>
+<br />
 The optional next step, in order to help the developer, would be to search through the PHP code for the reference to the vulnerable search field, using a code editor with Ctrl+ F, or using grep.
 Here the file \includes\user_dashboard\class-flexi-user-dashboard.php contains the input field that accepts the unsanitized user input.
 <img src="{{site.url}}/images/xssinputf.jpg" style="display: block; margin: auto;" />
@@ -85,8 +87,8 @@ Here the file \includes\user_dashboard\class-flexi-user-dashboard.php contains t
 In order to make a valuable report, it is important to submit steps to replicate the issue, mitigations, and impact of the vulnerability. Once you have written a report, you can submit it to wp-scan.
 https://wpscan.com/submit
 They will verify the issue, and assign a CVE if it is confirmed.
-<br>
-Link to plugin: https://wordpress.org/plugins/flexi/
-Link to plguin source code: https://plugins.trac.wordpress.org/browser/flexi/
-Link to WPScan report: https://wpscan.com/vulnerability/3cc1bb3c-e124-43d3-bc84-a493561a1387
-Link to Mitre CVE: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0449
+<br />
+Link to plugin:<a href="https://wordpress.org/plugins/flexi/">https://wordpress.org/plugins/flexi/</a>
+Link to plguin source code:<a href="https://plugins.trac.wordpress.org/browser/flexi/">https://plugins.trac.wordpress.org/browser/flexi/</a>
+Link to WPScan report:<a href="https://wpscan.com/vulnerability/3cc1bb3c-e124-43d3-bc84-a493561a1387"> https://wpscan.com/vulnerability/3cc1bb3c-e124-43d3-bc84-a493561a1387</a>
+Link to Mitre CVE: <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0449">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-0449</a>
