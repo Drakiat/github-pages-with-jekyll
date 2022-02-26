@@ -23,6 +23,7 @@ To set up docker create this yaml file:
 nano docker-compose.yaml
 ```
 and insert this content:
+
 ```
 version: "3.9"
 
@@ -55,7 +56,9 @@ services:
 volumes:
   db_data: {}
   wordpress_data: {}
+    
 ```
+
 then start the instance with this command
 
 ```
