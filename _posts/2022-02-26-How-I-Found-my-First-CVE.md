@@ -56,7 +56,7 @@ services:
 volumes:
   db_data: {}
   wordpress_data: {}
-    
+
 ```
 
 then start the instance with this command
@@ -90,9 +90,11 @@ http://localhost:8000/user-dashboard/?search=keyword:<img%20src=1%20onerror=aler
 <br>
 <br>
 There are many XSS payloads to manually test from in this repository:
-https://github.com/payloadbox/xss-payload-list
+<br>
+<a href="https://github.com/payloadbox/xss-payload-list">https://github.com/payloadbox/xss-payload-list</a>
 <br>
 The optional next step, in order to help the developer, would be to search through the PHP code for the reference to the vulnerable search field, using a code editor with Ctrl+ F, or using grep.
+<br>
 <br>
 Here the file "\includes\user_dashboard\class-flexi-user-dashboard.php" contains the input field that accepts the unsanitized user input.
 <img src="{{site.url}}/images/xssinputf.jpg" style="display: block; margin: auto;" />
