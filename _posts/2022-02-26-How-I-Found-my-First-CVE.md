@@ -57,9 +57,11 @@ volumes:
   wordpress_data: {}
 ```
 then start the instance with this command
+
 ```
 docker-compose up -d
 ```
+
 <p>then navigate to localhost:8000 on a web browser in order to start setting up your web page.</p>
 <h1>Installing a plug in</h1>
 <p>WordPress plugins are usually easy to install and uninstall, and the source code is freely available for anyone to inspect.</p>
