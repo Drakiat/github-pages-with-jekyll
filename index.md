@@ -1,4 +1,4 @@
 ---
-title: "Drakiat's blog"
+title: "Wyldgoat's blog"
 ---
 Cybersecurity blog and tech posts.
